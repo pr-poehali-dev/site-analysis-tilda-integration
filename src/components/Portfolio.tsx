@@ -51,49 +51,39 @@ const Portfolio = () => {
   ];
 
   return (
-    <section
-      id="portfolio"
-      className="py-20 bg-gradient-to-b from-mint to-sage"
-    >
+    <section id="portfolio" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="font-caveat text-5xl md:text-6xl font-bold text-white text-shadow mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Мои работы
           </h2>
-          <p className="text-xl text-white max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Каждая картина создана с любовью и отражает красоту простых моментов
             жизни
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {artworks.map((artwork, index) => (
-            <div
-              key={artwork.id}
-              className="group cursor-pointer transform transition-all duration-300 hover:scale-105"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="bg-white rounded-blob shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+          {artworks.map((artwork) => (
+            <div key={artwork.id} className="group cursor-pointer">
+              <div className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 <div className="relative overflow-hidden">
                   <img
                     src={artwork.image}
                     alt={artwork.title}
-                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div
-                    className={`absolute inset-0 ${artwork.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
-                  ></div>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-caveat text-2xl font-bold text-coral mb-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {artwork.title}
                   </h3>
-                  <p className="text-gray-600">{artwork.description}</p>
-                  <div className="mt-4 flex justify-between items-center">
-                    <span className="text-sm text-turquoise font-medium">
+                  <p className="text-gray-600 mb-4">{artwork.description}</p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-coral font-medium">
                       Наивное искусство
                     </span>
-                    <button className="text-coral hover:text-turquoise transition-colors">
+                    <button className="text-coral hover:text-opacity-80 transition-colors text-sm font-medium">
                       Подробнее →
                     </button>
                   </div>
@@ -104,7 +94,7 @@ const Portfolio = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-coral hover:bg-opacity-80 text-white px-8 py-4 rounded-blob font-medium text-lg transition-all duration-300 hover:scale-105 shadow-lg">
+          <button className="bg-coral hover:bg-opacity-90 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200">
             Посмотреть все работы
           </button>
         </div>
